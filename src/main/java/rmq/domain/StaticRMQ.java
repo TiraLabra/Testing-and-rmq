@@ -32,11 +32,10 @@ public class StaticRMQ implements RMQ {
         for (int j = 1; j < structure.length; j++) {
             for (int l = 1; l < structure[j].length; l++) {
                 int r = l + (int)Math.pow(2, j - 1);
-                if (r < structure[j].length && 
-                        arr[structure[j - 1][l] - 1] > arr[structure[j - 1][r] - 1]) {
+                if (r < structure[j].length 
+                        && arr[structure[j - 1][l] - 1] > arr[structure[j - 1][r] - 1]) {
                     structure[j][l] = structure[j - 1][r];
-                }
-                else {
+                } else {
                     structure[j][l] = structure[j - 1][l];
                 }
             }

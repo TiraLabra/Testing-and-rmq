@@ -25,7 +25,8 @@ public class ConsoleUI {
     public void run() {
         String sel = "";
         while (!sel.equals("s") && !sel.equals("d") && !sel.equals("p")) {
-            System.out.println("Select static (s) or dynamic (d) rmq, or do performance testing (p). ");
+            System.out.println("Select static (s) or dynamic (d) rmq, " 
+                    + "or do performance testing (p). ");
             sel = scan.nextLine();
         }
         if (sel.equals("p")) {

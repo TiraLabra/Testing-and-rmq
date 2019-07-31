@@ -1,10 +1,10 @@
-
 package rmq.domain;
+
+import static org.junit.Assert.*;
 
 import java.util.Arrays;
 import java.util.Random;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class TestStaticRMQ {
     
@@ -38,8 +38,8 @@ public class TestStaticRMQ {
         StaticRMQ rmq = new StaticRMQ(arr);
         for (int l = 0; l < arr.length; l++) {
             for (int r = l; r < arr.length; r++) {
-                assertEquals("Error for " + l + ", " + r + "\n" + 
-                        Arrays.toString(arr) + rmq.toString() + "\n", 
+                assertEquals("Error for " + l + ", " + r + "\n" 
+                        + Arrays.toString(arr) + rmq.toString() + "\n", 
                         bruteforce(arr, l, r), rmq.query(l, r));
             }
         }
