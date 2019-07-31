@@ -4,13 +4,15 @@ Note that the scope and documentation of this project is not appropriate for an 
 
 Additionally this project has a working [gradle setup](build.gradle) for Jacoco and [Checkstyle](config/checkstyle/checkstyle.xml) that may be useful for people doing the project course.
 
+The code in this repository contains several more or less critical bugs. Finding these bugs could be considered a challenge when reviewing this material. None of the bugs (that are known at least) relate to the actual data structure or algorithm implemetations but rather to how other code interfaces with them.
+
 # RMQ
 
 RMQ or range minimum query simply means that given an intervall in an array, we want to find the minimum in that interval. So for examplme given the array `{2, 4, 5, 1, 8, 3, 7, 2}` and the (zero indexed closed) range `[0,3]` we should find the range minumum of 2 at index 0.
 
-In this example project two different range minimum query structures have been implemented.
+In this example project two different range minimum query structures have been implemented. The specifics of the implementations are not critical for reading and understanding the material presented here. However if intrested the [RMQ wikipedia article](https://en.wikipedia.org/wiki/Range_minimum_query) contains some very good explanations.
 
-The [first](src/main/java/rmq/domain/StaticRMQ.java) is a static structure where values can not be updated after initialization. This structure is based on precalculating and storing specific ranges in such a way that queries can be done in constant time while <sub><img src="https://latex.codecogs.com/svg.latex?\mathcal{O}(n&space;\log&space;n)" title="O(n log n)" /></sub> space is used.
+The [first implementation](src/main/java/rmq/domain/StaticRMQ.java) is a static structure where values can not be updated after initialization. This structure is based on precalculating and storing specific ranges in such a way that queries can be done in constant time while <sub><img src="https://latex.codecogs.com/svg.latex?\mathcal{O}(n&space;\log&space;n)" title="O(n log n)" /></sub> space is used.
 
 The [second approach](src/main/java/rmq/domain/DynamicRMQ.java) is based on a segment tree that enables updating of values after initialization. The segment tree approach yields <sub><img src="https://latex.codecogs.com/svg.latex?\mathcal{O}(\log&space;n)" title="O(log n)" /></sub> time complexity for lookups while requiring <sub><img src="https://latex.codecogs.com/svg.latex?\mathcal{O}(n)" title="O(n)" /></sub> space.
 
