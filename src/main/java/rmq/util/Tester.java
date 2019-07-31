@@ -6,13 +6,14 @@ import rmq.domain.DynamicRMQ;
 import rmq.domain.StaticRMQ;
 
 public class Tester {
-    private final double[] dynamicInits = new double[6];
-    private final double[] staticInits = new double[6];
-    private final double[] dynamicQueries = new double[6];
-    private final double[] dynamicStd = new double[6];
-    private final double[] staticQueries = new double[6];
-    private final double[] staticStd = new double[6];
-    private final int[] nums = {10, 100, 1000, 10000, 100000, 1000000};
+    private final int[] nums = {10, 100, 1000, 10000, 100000, 1000000, 10000000};
+    private final int numberOfRuns = nums.length;
+    private final double[] dynamicInits = new double[numberOfRuns];
+    private final double[] staticInits = new double[numberOfRuns];
+    private final double[] dynamicQueries = new double[numberOfRuns];
+    private final double[] dynamicStd = new double[numberOfRuns];
+    private final double[] staticQueries = new double[numberOfRuns];
+    private final double[] staticStd = new double[numberOfRuns];
     private final Random rand;
 
     public Tester(Random rand) {
@@ -64,12 +65,15 @@ public class Tester {
             //Measure lookup for dynamic RMQ
             times = new long[lArr.length];
             for (int i = 0; i < lArr.length; i++) {
+                long tAcc = 0;
                 int l = lArr[i];
                 int r = rArr[i];
-                t = System.nanoTime();
-                dRMQ.query(l, r);
-                t = System.nanoTime() - t;
-                times[i] = t;
+                for (int j = 0; j < n; j++) {
+                    t = System.nanoTime();
+                    dRMQ.query(l, r);
+                    tAcc += System.nanoTime() - t;
+                }
+                times[i] = tAcc / n;
             }
             dynamicQueries[run] = getAverage(times);
             dynamicStd[run] = getStd(times, dynamicQueries[run]);
@@ -77,15 +81,20 @@ public class Tester {
             //Measure lookup for static RMQ
             times = new long[lArr.length];
             for (int i = 0; i < lArr.length; i++) {
+                long tAcc = 0;
                 int l = lArr[i];
                 int r = rArr[i];
-                t = System.nanoTime();
-                sRMQ.query(l, r);
-                t = System.nanoTime() - t;
-                times[i] = t;
+                for (int j = 0; j < n; j++) {
+                    t = System.nanoTime();
+                    sRMQ.query(l, r);
+                    tAcc += System.nanoTime() - t;
+                }
+                times[i] = tAcc / n;
             }
             staticQueries[run] = getAverage(times);
             staticStd[run] = getStd(times, staticQueries[run]);
+            
+            System.out.println("Ran " + num);
         }
     }
 
@@ -112,7 +121,7 @@ public class Tester {
             double[] std) {
         for (int i = 0; i < nums.length; i++) {
             String num = Integer.toString(nums[i]);
-            for (int j = 0; j < 7 - num.length(); j++) {
+            for (int j = 0; j < 8 - num.length(); j++) {
                 sb.append(" ");
             }
             sb.append(num);
