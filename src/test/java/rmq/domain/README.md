@@ -38,7 +38,7 @@ public void testNothing() {
 }
 ```
 
-There are [other annotations](https://www.guru99.com/junit-annotations-api.html) that are useful as well but more on these later.
+There are [other annotations](https://www.guru99.com/junit-annotations-api.html) that are useful as well but these won't be covered in detail.
 
 Assertions available through the `org.junit.Assert.*` import can be used to check for things. If the assertions fail, an exception will be thrown and the test in question will fail.
 
