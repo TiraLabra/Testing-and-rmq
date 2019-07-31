@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Random;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.Before;
@@ -87,4 +88,37 @@ public class TestConsoleUI {
         assertTrue(output[10].startsWith("arr[2,4]: 3"));
     }
     
+    /**
+     * Deterministic version of random that can be used for dependency
+     * injection in tests that need it.
+     */
+    private class InjectedRandom extends Random {
+        private final int[] arr;
+        private int current = 0;
+        
+        /**
+         * Create a new InjectedRandom where the return values for nextInt
+         * will infinitely rotate through the parameter array.
+         * @param arr 
+         */
+        public InjectedRandom(int[] arr) {
+            this.arr = arr;
+        }
+        
+        /**
+         * Overrides the default implementation of Random. Return values 
+         * will be picked for the array passed to the constructor.
+         * @param v Not used
+         * @return The next integer in the array. (First if no calls
+         * were previously recorded or if the previous call returned
+         * the last element.
+         */
+        @Override
+        public int nextInt(int v) {
+            current %= arr.length;
+            int val = arr[current];
+            current++;
+            return val;
+        }
+    }
 }
