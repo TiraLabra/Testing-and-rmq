@@ -44,7 +44,7 @@ Assertions available through the `org.junit.Assert.*` import can be used to chec
 
 ## Actual tests
 
-When writing actual tests it is a good idea to write very small test cases and try to concentrate on testin small very particular parts first. For example the first test in `TestStaticRMQ` just checks that the data structure works for a very simple test case. No particular attention is paid to the test being thorough. The idea is just that if the entire class fails, then this test will fail and be a good startin point for debugging.
+When writing actual tests it is a good idea to write very small test cases and try to concentrate on testing small very particular parts first. For example the first test in `TestStaticRMQ` just checks that the data structure works for a very simple test case. No particular attention is paid to the test being thorough. The idea is just that if the entire class fails, then this test will fail and be a good startin point for debugging.
 
 ```java
     @Test
