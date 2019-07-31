@@ -30,7 +30,7 @@ How to use dependency injection to test "hard to test" stuff
 
 ## [Introduction to dependency injection](src/test/java/rmq/ui)
 
-How to do basic timing for performance tests
+How to do basic timing and analysis for performance tests
 
 ## [Performance testing](src/main/java/rmq/util)
 
