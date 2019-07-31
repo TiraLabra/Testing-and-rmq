@@ -2,6 +2,8 @@
 
 Note that the scope and documentation of this project is not appropriate for an actual data structures and algorithms project. This is intended to provide a primer into unit and performance testing with java (and gradle). Additionally there may be some general notes about code and project structure.
 
+Additionally this project has a working [gradle setup](build.gradle) for Jacoco and [Checkstyle](config/checkstyle/checkstyle.xml) that may be useful for people doing the project course.
+
 # RMQ
 
 RMQ or range minimum query simply means that given an intervall in an array, we want to find the minimum in that interval. So for examplme given the array `{2, 4, 5, 1, 8, 3, 7, 2}` and the (zero indexed closed) range `[0,3]` we should find the range minumum of 2 at index 0.
@@ -32,7 +34,10 @@ How to do basic timing for performance tests
 
 If you have looked at the coverage report you may have noticed that the dynamic RMQ and parts of the UI are not covered. The idea is that coverage for these can be completed as an exercize for someone familiarizing themselves with testing.
 
-# Project structure
+# Project structure and code quality
 
-While this project is very small, some attention has been payed to try to follow good progamming practices. [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), [Single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle) and clean [code principles](https://medium.com/mindorks/how-to-write-clean-code-lessons-learnt-from-the-clean-code-robert-c-martin-9ffc7aef870c) in general.
+While this project is very small, some attention has been paid to try to follow good progamming practices. [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), [Single responsibility](https://en.wikipedia.org/wiki/Single_responsibility_principle) and [clean code](https://medium.com/mindorks/how-to-write-clean-code-lessons-learnt-from-the-clean-code-robert-c-martin-9ffc7aef870c) principles in general.
 
+[Checkstyle](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) is used to autmate some code quality checks. The configuration is a modified version of the [google-checks.xml](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml) file. The checks will be run during `gradle build` and can be run separately with `gradle check`. You may note that checkstyle does produce some warnings for missing javadocs. Adding at least simple javadocs to those places would probably be a good idea.
+
+The [run method](src/main/java/rmq/util/Tester.java#L26) in the Tester class is fairly long and repetetive. It could be a good idea to refactor the preprocessing timing and query rinning into separate methods to limit repetition. However, this kind of testing code is often left fairly raw since it's not considered actual "production code". 
