@@ -41,3 +41,7 @@ While this project is very small, some attention has been paid to try to follow 
 [Checkstyle](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) is used to autmate some code quality checks. The configuration is a modified version of the [google-checks.xml](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml) file. The checks will be run during `gradle build` and can be run separately with `gradle check`. You may note that checkstyle does produce some warnings for missing javadocs. Adding at least simple javadocs to those places would probably be a good idea.
 
 The [run method](src/main/java/rmq/util/Tester.java#L26) in the Tester class is fairly long and repetetive. It could be a good idea to refactor the preprocessing and query running steps into separate methods to limit repetition. However, this kind of testing code is often left fairly raw since it's not considered actual "production code". 
+
+# Contriburing to the example
+
+If you find issues with the content of this repository or feel that something would require clarification, please submit a pull reques or an issue.
