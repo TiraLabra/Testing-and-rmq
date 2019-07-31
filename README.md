@@ -20,9 +20,13 @@ The [second approach](src/main/java/rmq/domain/DynamicRMQ.java) is based on a se
 
 This project is a [gradle](https://gradle.org/) project and has [Jacoco](https://docs.gradle.org/current/userguide/jacoco_plugin.html) set up to generate test coverage reports.
 
-The project (once cloned) can be compiled and tested by running `gradle build`. This will also generate the coverage reports to `build/reports/jacoco/test/html/index.html`. Note that the code for performance testing is not included in the report. This is due to the [exlusion rule in the build.gradle file](build.gradle#L41). Similar exlusion rules are convenient for excluding for example GUI code.
+The project (once cloned) can be compiled and tested by running `gradle build`. This will also generate the coverage reports to `build/reports/jacoco/test/html/index.html`. Note that the code for performance testing is not included in the report. This is due to an [exlusion rule in the build.gradle file](build.gradle#L41). Similar exlusion rules are convenient for excluding for example GUI code.
 
-Below you will find links to further documentation about basic data structure/algorithm testing using unit tests
+Below you will find links to folders in this repository where more markdown documentation and some relevant code can be found. 
+
+Topics include: 
+
+Basic data structure/algorithm testing using unit tests.
 
 ## [Basic data structure testing](src/test/java/rmq/domain)
 
@@ -30,11 +34,11 @@ How to use dependency injection to test "hard to test" stuff
 
 ## [Introduction to dependency injection](src/test/java/rmq/ui)
 
-How to do basic timing and analysis for performance tests
+How to do basic timing and very basic analysis for performance tests
 
 ## [Performance testing](src/main/java/rmq/util)
 
-If you have looked at the coverage report you may have noticed that the dynamic RMQ and parts of the UI are not covered. The idea is that coverage for these can be completed as an exercize for someone familiarizing themselves with testing.
+If you have looked at the test coverage report you may have noticed that the dynamic RMQ and parts of the UI are not covered. The idea is that coverage for these can be completed as an exercize for someone familiarizing themselves with testing.
 
 # Project structure and code quality
 
