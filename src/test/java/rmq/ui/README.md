@@ -99,3 +99,7 @@ After this setup, the content printed by anyting we call in a test can be access
 Above we check the fifth line of output when the console ui is prompted with `"s", "e", "2", "3", "4", "f", ""`.
 
 Using this in combination with dependency injection, classes that read and write to/from the standard I/O stream can be tested... Provided they support dependency injection.
+
+## [Basic data structure testing](../domain)
+
+## [Performance testing](../../../../main/java/rmq/util)
