@@ -105,6 +105,6 @@ Now the coverage report looks good and we can be fairly confident that practical
 
 The `ToString` method also has full coverage now as a side effect but that is beside the point since the implementation is only intended for debugging.
 
-## [Introduction to dependency injection](src/test/java/rmq/ui)
+## [Introduction to dependency injection](../ui)
 
-## [Performance testing](src/main/java/rmq/util)
+## [Performance testing](../../../../main/java/rmq/util)
