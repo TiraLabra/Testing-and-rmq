@@ -104,3 +104,7 @@ Now the coverage report looks good and we can be fairly confident that practical
 ![good coverage](../../../../../img/good_coverage.png)
 
 The `ToString` method also has full coverage now as a side effect but that is beside the point since the implementation is only intended for debugging.
+
+## [Introduction to dependency injection](src/test/java/rmq/ui)
+
+## [Performance testing](src/main/java/rmq/util)
