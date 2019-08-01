@@ -118,3 +118,7 @@ It is intresting to note tho that the static structure is faster and with a lowe
 ## To reiterate
 
 The more runs, data and iterations, the better. But even for simple data structures and algorithms, running massing numbers of iterations on big datasets takes a significant amount of time.
+
+## [Basic data structure testing](../../../../test/java/rmq/domain)
+
+## [Introduction to dependency injection](../../../../test/java/rmq/ui)
