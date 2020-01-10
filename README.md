@@ -20,7 +20,7 @@ The [second approach](src/main/java/rmq/domain/DynamicRMQ.java) is based on a se
 
 This project is a [gradle](https://gradle.org/) project and has [Jacoco](https://docs.gradle.org/current/userguide/jacoco_plugin.html) set up to generate test coverage reports.
 
-The project (once cloned) can be compiled and tested by running `gradle build`. This will also generate the coverage reports to `build/reports/jacoco/test/html/index.html`. Note that the code for performance testing is not included in the report. This is due to an [exlusion rule in the build.gradle file](build.gradle#L41). Similar exlusion rules are convenient for excluding for example GUI code.
+The project (once cloned) can be compiled and tested by running `./gradlew build`. This will also generate the coverage reports to `build/reports/jacoco/test/html/index.html`. Note that the code for performance testing is not included in the report. This is due to an [exlusion rule in the build.gradle file](build.gradle#L41). Similar exlusion rules are convenient for excluding for example GUI code.
 
 Below you will find links to folders in this repository where more markdown documentation and some relevant code can be found. 
 
