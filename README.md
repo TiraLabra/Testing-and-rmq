@@ -12,9 +12,9 @@ RMQ or range minimum query simply means that given an intervall in an array, we 
 
 In this example project two different range minimum query structures have been implemented. The specifics of the implementations are not critical for reading and understanding the material presented here. However if intrested the [RMQ wikipedia article](https://en.wikipedia.org/wiki/Range_minimum_query) contains some very good explanations.
 
-The [first implementation](src/main/java/rmq/domain/StaticRMQ.java) is a static structure where values can not be updated after initialization. This structure is based on precalculating and storing specific ranges in such a way that queries can be done in constant time while <sub><img src="https://latex.codecogs.com/svg.latex?\mathcal{O}(n&space;\log&space;n)" title="O(n log n)" /></sub> space is used.
+The [first implementation](src/main/java/rmq/domain/StaticRMQ.java) is a static structure where values can not be updated after initialization. This structure is based on precalculating and storing specific ranges in such a way that queries can be done in constant time while O(n log n) space is used.
 
-The [second approach](src/main/java/rmq/domain/DynamicRMQ.java) is based on a segment tree that enables updating of values after initialization. The segment tree approach yields <sub><img src="https://latex.codecogs.com/svg.latex?\mathcal{O}(\log&space;n)" title="O(log n)" /></sub> time complexity for lookups while requiring <sub><img src="https://latex.codecogs.com/svg.latex?\mathcal{O}(n)" title="O(n)" /></sub> space.
+The [second approach](src/main/java/rmq/domain/DynamicRMQ.java) is based on a segment tree that enables updating of values after initialization. The segment tree approach yields O(log n) time complexity for lookups while requiring O(n) space.
 
 # Testing
 
